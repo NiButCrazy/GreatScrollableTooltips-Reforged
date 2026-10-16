@@ -8,7 +8,6 @@ import net.minecraft.world.inventory.Slot;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.MinecraftForge;
-import cn.flowerinsnow.greatscrollabletooltips.event.PreScreenKeyPressedEvent;
 import cn.flowerinsnow.greatscrollabletooltips.event.PreScreenMouseScrollEvent;
 import cn.flowerinsnow.greatscrollabletooltips.event.RenderTooltipEvent;
 import org.spongepowered.asm.mixin.Final;
@@ -18,7 +17,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(AbstractContainerScreen.class)
 @OnlyIn(Dist.CLIENT)
@@ -48,14 +46,6 @@ public class MixinHandledScreen extends Screen {
         } else {
             MinecraftForge.EVENT_BUS.post(new RenderTooltipEvent.Miss(this.THIS));
         }
-    }
-
-    @Inject(
-            method = "keyPressed",
-            at = @At("HEAD")
-    )
-    public void keyPressed(int keyCode, int scanCode, int modifiers, CallbackInfoReturnable<Boolean> cir) {
-        MinecraftForge.EVENT_BUS.post(new PreScreenKeyPressedEvent(this.THIS, keyCode, scanCode, modifiers));
     }
 
     @Override

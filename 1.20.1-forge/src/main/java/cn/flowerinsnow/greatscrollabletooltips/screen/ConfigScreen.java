@@ -9,7 +9,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import cn.flowerinsnow.greatscrollabletooltips.common.config.GreatScrollableTooltipsConfig;
+import cn.flowerinsnow.greatscrollabletooltips.config.GreatScrollableTooltipsConfig;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -36,7 +36,7 @@ public class ConfigScreen extends Screen {
                             button.setMessage(Component.translatable(config.enable ? "great-scrollable-tooltips.ui.config.enable.true" : "great-scrollable-tooltips.ui.config.enable.false"));
                             config.save();
                         })
-                        .pos(this.width / 2 - 100, this.height / 2 - 48)
+                        .pos(this.width / 2 - 100, this.height / 2 - 73)
                         .size(200, 20)
                         .build()
         );
@@ -50,15 +50,45 @@ public class ConfigScreen extends Screen {
                             button.setMessage(Component.translatable(config.autoReset ? "great-scrollable-tooltips.ui.config.auto-reset.true" : "great-scrollable-tooltips.ui.config.auto-reset.false"));
                             config.save();
                         })
-                        .pos(this.width / 2 - 100, this.height / 2 - 23)
+                        .pos(this.width / 2 - 100, this.height / 2 - 48)
                         .size(200, 20)
                         .tooltip(Tooltip.create(Component.translatable("great-scrollable-tooltips.ui.config.auto-reset.tooltip")))
                         .build()
         );
 
         this.addRenderableWidget(
+                new Button.Builder(
+                        Component.translatable(this.config.invertKey ? "great-scrollable-tooltips.ui.config.invert-key.true" : "great-scrollable-tooltips.ui.config.invert-key.false"),
+                        button -> {
+                            GreatScrollableTooltipsConfig config = ConfigScreen.this.config;
+                            config.invertKey = !config.invertKey;
+                            button.setMessage(Component.translatable(config.invertKey ? "great-scrollable-tooltips.ui.config.invert-key.true" : "great-scrollable-tooltips.ui.config.invert-key.false"));
+                            config.save();
+                        })
+                        .pos(this.width / 2 - 100, this.height / 2 - 23)
+                        .size(200, 20)
+                        .tooltip(Tooltip.create(Component.translatable("great-scrollable-tooltips.ui.config.invert-key.tooltip")))
+                        .build()
+        );
+
+        this.addRenderableWidget(
+                new Button.Builder(
+                        Component.translatable(this.config.disableMouseScroll ? "great-scrollable-tooltips.ui.config.disable-mouse-scroll.true" : "great-scrollable-tooltips.ui.config.disable-mouse-scroll.false"),
+                        button -> {
+                            GreatScrollableTooltipsConfig config = ConfigScreen.this.config;
+                            config.disableMouseScroll = !config.disableMouseScroll;
+                            button.setMessage(Component.translatable(config.disableMouseScroll ? "great-scrollable-tooltips.ui.config.disable-mouse-scroll.true" : "great-scrollable-tooltips.ui.config.disable-mouse-scroll.false"));
+                            config.save();
+                        })
+                        .pos(this.width / 2 - 100, this.height / 2 + 2)
+                        .size(200, 20)
+                        .tooltip(Tooltip.create(Component.translatable("great-scrollable-tooltips.ui.config.disable-mouse-scroll.tooltip")))
+                        .build()
+        );
+
+        this.addRenderableWidget(
                 this.sensitivitySlider = new AbstractSliderButton(
-                        this.width / 2 - 100, this.height / 2 + 2,
+                        this.width / 2 - 100, this.height / 2 + 27,
                         200, 20,
                         Component.translatable("great-scrollable-tooltips.ui.config.sensitivity", this.config.sensitivity),
                         new BigDecimal(this.config.sensitivity)
@@ -76,7 +106,7 @@ public class ConfigScreen extends Screen {
                                                 .add(BigDecimal.ONE)
                                                 .setScale(0, RoundingMode.DOWN)
                                                 .intValue()
-                        ));
+                                ));
                     }
 
                     @Override
@@ -97,7 +127,7 @@ public class ConfigScreen extends Screen {
                             ConfigScreen instance = ConfigScreen.this;
                             Minecraft.getInstance().setScreen(instance.parent);
                         })
-                        .pos(this.width / 2 - 100, this.height / 2 + 27)
+                        .pos(this.width / 2 - 100, this.height / 2 + 52)
                         .size(200, 20)
                         .build()
         );

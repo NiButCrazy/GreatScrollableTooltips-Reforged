@@ -1,3 +1,5 @@
 enable = true
 sensitivity = 10
 auto_reset = true
+invert_key = true
+disable_mouse_scroll = true

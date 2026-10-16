@@ -20,6 +20,10 @@ public record MouseScrollListener(GreatScrollableTooltips main) {
             return;
         }
 
+        if (this.main.getConfig().disableMouseScroll) { // 关闭鼠标滚轮位移时，滚轮不移动物品提示
+            return;
+        }
+
         ScrollSession<ItemStack> session = this.main.getScrollSession();
 
         if (!session.isRendering()) { // 只有渲染物品提示时才允许滚动

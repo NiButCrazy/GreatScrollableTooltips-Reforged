@@ -11,7 +11,7 @@ version = project.property("mod_version") as String
 group = project.property("mod_group_id") as String
 
 base {
-    archivesName.set(project.property("mod_id") as String)
+    archivesName.set(project.property("mod_id") as String + "-reforged")
 }
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
@@ -153,14 +153,14 @@ tasks.processResources.configure {
         "mod_name" to project.property("mod_name"),
         "mod_license" to project.property("mod_license"),
         "mod_version" to project.property("mod_version"),
-        "mod_authors" to project.property("mod_authors"),
-        "mod_description" to project.property("mod_description")
+        "mod_authors" to project.property("mod_authors")
     )
 
     replaceProperties.forEach(inputs::property)
 
     filesMatching(listOf("META-INF/mods.toml", "pack.mcmeta")) {
         expand(replaceProperties)
+        filteringCharset = "UTF-8" // mods.toml 含中文描述，强制以 UTF-8 过滤
     }
 }
 

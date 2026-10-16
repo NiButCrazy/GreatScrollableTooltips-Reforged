@@ -1,13 +1,23 @@
 # Languages
 [简体中文](README/zh_cn.md)
 
-# GreatScrollableTooltips
+# GreatScrollableTooltips Reforged
+
+A **Reforged** version of [GreatScrollableTooltips](https://github.com/flowerinsnowdh/GreatScrollableTooltips), maintained by [NiButCrazy](https://github.com/NiButCrazy).
+
+> **Original project**: <https://github.com/flowerinsnowdh/GreatScrollableTooltips> (by [flowerinsnow](https://github.com/flowerinsnowdh))
+> All credits for the original work belong to the original author.
+
 Allow scrolling of item tooltips in inventory (Lore).
 
+What's new in this Reforged version (1.20.1 Forge):
+- Arrow keys can scroll tooltips in JEI / EMI screens (both container screens and recipe screens).
+- New config: **Invert keys** (up/down/left/right), enabled by default.
+- New config: **Disable mouse wheel scrolling**, enabled by default to avoid conflicts with list scrolling.
+
 # Links
-- [View on Modrinth](https://modrinth.com/mod/great-scrollable-tooltips)
-- [View on CurseForge](https://www.curseforge.com/minecraft/mc-mods/great-scrollable-tooltips)
-- [View on MC百科](https://www.mcmod.cn/class/14734.html)
+- **Original project**: [GitHub](https://github.com/flowerinsnowdh/GreatScrollableTooltips) · [Modrinth](https://modrinth.com/mod/great-scrollable-tooltips) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/great-scrollable-tooltips) · [MC百科](https://www.mcmod.cn/class/14734.html)
+- **This Reforged version**: [GitHub](https://github.com/NiButCrazy/GreatScrollableTooltips-Reforged)
 
 # What does the Great prefix mean?
 Just to distinguish it from other already called Scrollable Tooltips to avoid ModID conflicts.
@@ -15,11 +25,11 @@ Just to distinguish it from other already called Scrollable Tooltips to avoid Mo
 Reference to the country where I once lived, "Great Britain".
 
 # Usage
-Put the mod file into the mods directory, point the mouse pointer at an item, and slide the mouse wheel to scroll the item tooltip.
+Put the mod file into the mods directory, point the mouse pointer at an item, and scroll the item tooltip with the bound keys (arrow keys ↑ ↓ ← → by default). This also works in JEI / EMI screens.
 
-Some versions allow you to hold down Shift and use your mouse wheel to scroll horizontally.
+In this Reforged version, mouse wheel scrolling is **disabled by default**; it can be enabled in the config (when enabled, hold Shift with the mouse wheel to scroll horizontally, and it only applies to vanilla item slots).
 
-Some versions allow you to scroll through bound keys, which can be changed in key bindings.
+Key bindings can be changed in "Key Bindings".
 
 # How to configure
 If you are using the Forge version, go to the Mod page, find Great Scrollable Tooltips and click "config".
@@ -63,8 +73,11 @@ If you are using the Fabric version, please install Mod [Mod Menu](https://modri
 |    15.x     |       1.20.1       |                                     ✅                                      |                                 ✅                                  |                                     ✅                                      |                                     ✅                                      |                              ✅                              |                          ✅                          |                                         ✅                                         |
 
 # Credits
-[<img src="README/CREDITS/jetbrains.png" alt="jetbrains.png"/>](https://www.jetbrains.com)
+- **Original project**: [GreatScrollableTooltips](https://github.com/flowerinsnowdh/GreatScrollableTooltips) by [flowerinsnow](https://github.com/flowerinsnowdh) — all credits for the original work belong to the original author.
+- **Reforged version**: maintained by [NiButCrazy](https://github.com/NiButCrazy).
 
-This project is developed with the support of [JetBrains](https://www.jetbrains.com/), they provides free licenses for their IDEs to open-source projects. Their tools greatly enhance my productivity and development experience.
+The original project is developed with the support of [JetBrains](https://www.jetbrains.com/); they provide free licenses for their IDEs to open-source projects.
+
+[<img src="README/CREDITS/jetbrains.png" alt="jetbrains.png"/>](https://www.jetbrains.com)
 
 I sincerely thank [JetBrains](https://www.jetbrains.com/) for their [support of open-source software](https://www.jetbrains.com/community/opensource/). If you're looking for powerful development tools, check out [JetBrains' products](https://www.jetbrains.com/products/).

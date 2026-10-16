@@ -1,10 +1,20 @@
-# Great Scrollable Tooltips
+# Great Scrollable Tooltips Reforged
+
+[GreatScrollableTooltips](https://github.com/flowerinsnowdh/GreatScrollableTooltips) 的**个人重构版（Reforged）**，由 [NiButCrazy](https://github.com/NiButCrazy) 维护。
+
+> **项目原地址**：<https://github.com/flowerinsnowdh/GreatScrollableTooltips>（作者：[flowerinsnow](https://github.com/flowerinsnowdh)）
+> 原项目的全部著作权归原作者所有。
+
 允许滚动物品栏中的物品工具提示（Lore）。
 
+本重构版新增（1.20.1 Forge）：
+- 支持在 JEI / EMI 界面中使用方向键滚动物品提示（容器界面与配方界面均可）
+- 新增配置「按键反转」：反转上下左右方向键的滚动方向（默认开启）
+- 新增配置「关闭鼠标滚轮位移」：避免滚轮与物品列表滚动冲突（默认开启）
+
 # 链接
-- [在 Modrinth 上查看](https://modrinth.com/mod/great-scrollable-tooltips)
-- [在 CurseForge 上查看](https://www.curseforge.com/minecraft/mc-mods/great-scrollable-tooltips)
-- [在 MC百科 上查看](https://www.mcmod.cn/class/14734.html)
+- **项目原地址**：[GitHub](https://github.com/flowerinsnowdh/GreatScrollableTooltips) · [Modrinth](https://modrinth.com/mod/great-scrollable-tooltips) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/great-scrollable-tooltips) · [MC百科](https://www.mcmod.cn/class/14734.html)
+- **本重构版**：[GitHub](https://github.com/NiButCrazy/GreatScrollableTooltips-Reforged)
 
 # Great 前缀是什么意思？
 仅仅是为了与其他已经叫作 Scrollable Tooltips 区分，避免 ModID 冲突。
@@ -12,11 +22,11 @@
 参考了曾经居住过的国家 “大不列颠”。
 
 # 用法
-将 Mod 文件放入 mods 目录中，将鼠标指针对准一个物品，滑动鼠标滚轮即可滚动物品工具提示。
+将 Mod 文件放入 mods 目录中，将鼠标指针对准一个物品，使用绑定的按键（默认为方向键 ↑ ↓ ← →）即可滚动物品工具提示；在 JEI / EMI 界面中同样有效。
 
-部分版本支持您按住 Shift 并使用鼠标滚轮来实现水平滚动。
+本重构版中鼠标滚轮位移**默认关闭**，可在配置中开启（开启后按住 Shift 使用滚轮可水平滚动，且仅对原版物品槽生效）。
 
-部分版本支持您通过绑定的按键来上左下右进行滚动，它们可以在按键绑定中修改。
+按键绑定可在「按键绑定」中修改。
 
 # 配置方法
 如果您正在使用 Forge 版本，请进入 Mod 页面，找到 Great Scrollable Tooltips 并点击 “config”。
@@ -60,6 +70,11 @@
 |   15.x   |     1.20.1     |                                     ✅                                      |                                 ✅                                  |                                     ✅                                      |                                     ✅                                      |                              ✅                              |                          ✅                          |                                         ✅                                         |
 
 # 鸣谢
+- **项目原地址**：[GreatScrollableTooltips](https://github.com/flowerinsnowdh/GreatScrollableTooltips)（作者：[flowerinsnow](https://github.com/flowerinsnowdh)）——原项目的全部著作权归原作者所有。
+- **本重构版**：由 [NiButCrazy](https://github.com/NiButCrazy) 维护。
+
+以下致谢内容来自原项目：
+
 [<img src="README/CREDITS/jetbrains.png" alt="jetbrains.png"/>](https://www.jetbrains.com)
 
 本项目的开发得到了 [JetBrains](https://www.jetbrains.com/) 的支持，他们慷慨地为开源项目提供了免费的 IDE 许可证。他们的工具大大提高了我的工作效率和开发体验。

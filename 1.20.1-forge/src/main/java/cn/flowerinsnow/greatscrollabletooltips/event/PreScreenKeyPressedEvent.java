@@ -1,6 +1,6 @@
 package cn.flowerinsnow.greatscrollabletooltips.event;
 
-import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.eventbus.api.Event;
@@ -9,19 +9,19 @@ import java.util.Objects;
 
 @OnlyIn(Dist.CLIENT)
 public class PreScreenKeyPressedEvent extends Event {
-    private final AbstractContainerScreen<?> screen;
+    private final Screen screen;
     private final int keyCode;
     private final int scanCode;
     private final int modifiers;
 
-    public PreScreenKeyPressedEvent(AbstractContainerScreen<?> screen, int keyCode, int scanCode, int modifiers) {
+    public PreScreenKeyPressedEvent(Screen screen, int keyCode, int scanCode, int modifiers) {
         this.screen = screen;
         this.keyCode = keyCode;
         this.scanCode = scanCode;
         this.modifiers = modifiers;
     }
 
-    public AbstractContainerScreen<?> getScreen() {
+    public Screen getScreen() {
         return this.screen;
     }
 

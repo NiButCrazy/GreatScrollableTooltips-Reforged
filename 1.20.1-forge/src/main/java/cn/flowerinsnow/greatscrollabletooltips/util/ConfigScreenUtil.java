@@ -1,6 +1,6 @@
 package cn.flowerinsnow.greatscrollabletooltips.util;
 
-import cn.flowerinsnow.greatscrollabletooltips.common.config.GreatScrollableTooltipsConfig;
+import cn.flowerinsnow.greatscrollabletooltips.config.GreatScrollableTooltipsConfig;
 import cn.flowerinsnow.greatscrollabletooltips.screen.ConfigScreen;
 import net.minecraftforge.client.ConfigScreenHandler;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

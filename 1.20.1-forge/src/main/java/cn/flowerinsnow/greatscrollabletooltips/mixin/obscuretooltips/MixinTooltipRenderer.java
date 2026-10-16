@@ -1,7 +1,7 @@
 package cn.flowerinsnow.greatscrollabletooltips.mixin.obscuretooltips;
 
 import cn.flowerinsnow.greatscrollabletooltips.GreatScrollableTooltips;
-import cn.flowerinsnow.greatscrollabletooltips.common.config.GreatScrollableTooltipsConfig;
+import cn.flowerinsnow.greatscrollabletooltips.config.GreatScrollableTooltipsConfig;
 import cn.flowerinsnow.greatscrollabletooltips.common.object.ScrollSession;
 import com.obscuria.tooltips.client.renderer.TooltipRenderer;
 import net.minecraft.world.item.ItemStack;

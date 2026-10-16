@@ -1,5 +1,6 @@
 package cn.flowerinsnow.greatscrollabletooltips;
 
+import cn.flowerinsnow.greatscrollabletooltips.object.TooltipRenderState;
 import cn.flowerinsnow.greatscrollabletooltips.util.ConfigScreenUtil;
 import net.minecraft.CrashReport;
 import net.minecraft.client.Minecraft;
@@ -11,7 +12,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
-import cn.flowerinsnow.greatscrollabletooltips.common.config.GreatScrollableTooltipsConfig;
+import cn.flowerinsnow.greatscrollabletooltips.config.GreatScrollableTooltipsConfig;
 import cn.flowerinsnow.greatscrollabletooltips.listener.*;
 import cn.flowerinsnow.greatscrollabletooltips.manager.KeyBindingManager;
 import cn.flowerinsnow.greatscrollabletooltips.common.object.ScrollSession;
@@ -30,6 +31,8 @@ public class GreatScrollableTooltips {
     private GreatScrollableTooltipsConfig config;
 
     private ScrollSession<ItemStack> scrollSession;
+
+    private final TooltipRenderState tooltipRenderState = new TooltipRenderState();
 
     public GreatScrollableTooltips() {
         //noinspection removal : for old forge versions
@@ -101,5 +104,9 @@ public class GreatScrollableTooltips {
 
     public ScrollSession<ItemStack> getScrollSession() {
         return this.scrollSession;
+    }
+
+    public TooltipRenderState getTooltipRenderState() {
+        return this.tooltipRenderState;
     }
 }

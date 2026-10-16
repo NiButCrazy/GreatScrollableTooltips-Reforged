@@ -39,7 +39,12 @@ authors="${mod_authors}" #optional
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
 
 # The description text for the mod (multi line!) (#mandatory)
-description='''${mod_description}'''
+description='''允许在容器界面中滚动物品提示。
+
+本版本（Reforged）在原版 Great Scrollable Tooltips 的基础上修改，新增功能：
+- 支持在 JEI / EMI 的容器界面与配方界面中使用方向键滚动物品提示
+- 新增配置项：上下按键反转
+- 新增配置项：关闭鼠标滚轮位移（默认开启，避免与物品列表滚动冲突）'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.${mod_id}]] #optional
 # the modid of the dependency

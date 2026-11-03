@@ -1,6 +1,10 @@
 # Languages
 [简体中文](README/zh_cn.md)
 
+<p align="center">
+  <img src="1.20.1-forge/src/main/resources/logo.png" width="220" alt="Great Scrollable Tooltips Reforged logo"/>
+</p>
+
 # GreatScrollableTooltips Reforged
 
 A **Reforged** version of [GreatScrollableTooltips](https://github.com/flowerinsnowdh/GreatScrollableTooltips), maintained by [NiButCrazy](https://github.com/NiButCrazy).

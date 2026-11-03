@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="../1.20.1-forge/src/main/resources/logo.png" width="220" alt="Great Scrollable Tooltips Reforged logo"/>
+</p>
+
 # Great Scrollable Tooltips Reforged
 
 [GreatScrollableTooltips](https://github.com/flowerinsnowdh/GreatScrollableTooltips) 的**个人重构版（Reforged）**，由 [NiButCrazy](https://github.com/NiButCrazy) 维护。

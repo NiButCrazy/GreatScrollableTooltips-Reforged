@@ -1,0 +1,57 @@
+name: Publish to CurseForge
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "要推送到 CurseForge 的 Release tag，例如 v15.5.2+forge"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+    steps:
+      - name: Validate tag
+        run: |
+          case "$TAG" in
+            *+forge) ;;
+            *) echo "::error::本工作流目前只支持 +forge 的 1.20.1 版本，收到: $TAG"; exit 1 ;;
+          esac
+
+      - name: Download release artifacts and changelog
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p build/libs
+          gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "*.jar" --dir build/libs
+          ls -la build/libs
+          BODY=$(gh release view "$TAG" --repo "$GITHUB_REPOSITORY" --json body --jq .body)
+          {
+            echo "RELEASE_BODY<<BODY_EOF"
+            echo "$BODY"
+            echo "BODY_EOF"
+          } >> "$GITHUB_ENV"
+
+      - name: Publish to CurseForge
+        uses: Kir-Antipov/mc-publish@v3
+        with:
+          curseforge-id: ${{ secrets.CURSEFORGE_PROJECT_ID }}
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          files: build/libs/*.jar
+          name: Great Scrollable Tooltips Reforged ${{ env.TAG }}
+          version: ${{ env.TAG }}
+          version-type: release
+          changelog: ${{ env.RELEASE_BODY }}
+
+          game-versions: "1.20.1"
+          loaders: forge
+          java: "17"
